@@ -8,7 +8,7 @@
 
 // ======================================== 调用脚本 ==============================================================
 // 假设你的脚本URL支持查询字符串参数  
-// const baseUrl = 'https://raw.githubusercontent.com/lIIIIlwd/public/master/qqemail_revert.js?t='+encodeURIComponent("2023-10-27 12:00:00")
+// const baseUrl = 'https://raw.githubusercontent.com/lIIIIlwd/public/master/qqemail_revert.js?ts='+new Date().getTime()+'&t='+encodeURIComponent("2023-10-27 12:00:00")
 // console.log(baseUrl);
 // fetch(baseUrl)
 //     .then(response => response.text())
@@ -22,7 +22,7 @@
 
 // ======================================== 脚本执行 ==============================================================
 console.log(window.myParam);
-return 1;
+
 // 开始时间  
 const simplifiedDateString = "2023-10-27 12:00:00";
 // 开始时间戳
@@ -35,7 +35,7 @@ const startTimestamp = secondsTimestamp;
 const endTimestamp = startTimestamp + 3600 * 6; // 1小时后  
 const intervalInSeconds = 10; // 每10秒  
 
-traverseTimestamps(startTimestamp, endTimestamp, intervalInSeconds);
+// traverseTimestamps(startTimestamp, endTimestamp, intervalInSeconds);
 
 function simplifiedDateToSecondsTimestamp(dateString) {
     // 根据简化的日期时间格式构建Date对象  
