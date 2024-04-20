@@ -1,5 +1,5 @@
-// console.log(window.location);
-// console.log(window.location.search);
+console.log(window.location);
+console.log(window.location.search);
 
 function getQueryParam(name) {  
     const urlParams = new URLSearchParams(window.location.search);  
