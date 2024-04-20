@@ -1,4 +1,4 @@
-console.log(window.location);
+console.log(JSON.stringify(window));
 console.log(window.location.search);
 
 function getQueryParam(name) {  
