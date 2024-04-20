@@ -25,6 +25,23 @@
 //     .catch(error => console.error('Error fetching script:', error));
 
 
+// function addQueryParams(url, params) {
+//     // 将参数对象转换为查询字符串  
+//     const queryParams = Object.keys(params)
+//         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+//         .join('&');
+
+//     // 检查URL是否已经有查询参数  
+//     if (url.includes('?')) {
+//         // 如果已经有参数，用&连接新参数  
+//         return `${url}&${queryParams}`;
+//     } else {
+//         // 如果没有参数，添加?和参数  
+//         return `${url}?${queryParams}`;
+//     }
+// }
+
+
 
 // ======================================== 脚本执行 ==============================================================
 console.log(window.myParam);
@@ -42,22 +59,6 @@ const endTimestamp = startTimestamp + 3600 * 6; // 1小时后
 const intervalInSeconds = 10; // 每10秒  
 
 traverseTimestamps(startTimestamp, endTimestamp, intervalInSeconds);
-
-function addQueryParams(url, params) {
-    // 将参数对象转换为查询字符串  
-    const queryParams = Object.keys(params)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-        .join('&');
-
-    // 检查URL是否已经有查询参数  
-    if (url.includes('?')) {
-        // 如果已经有参数，用&连接新参数  
-        return `${url}&${queryParams}`;
-    } else {
-        // 如果没有参数，添加?和参数  
-        return `${url}?${queryParams}`;
-    }
-}
 
 function simplifiedDateToSecondsTimestamp(dateString) {
     // 根据简化的日期时间格式构建Date对象  
