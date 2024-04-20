@@ -1,17 +1,27 @@
-console.log(window.location);
-console.log(window.location.search);
+// console.log(window.location);
+// console.log(window.location.search);
 
-// 开始时间  
-const simplifiedDateString = "2023-10-27 12:00:00";
-// 开始时间戳
-const secondsTimestamp = simplifiedDateToSecondsTimestamp(simplifiedDateString);
-console.log(simplifiedDateString); 	// 输出秒级时间戳
+function getQueryParam(name) {  
+    const urlParams = new URLSearchParams(window.location.search);  
+    return urlParams.get(name);  
+}
+
+const myParam = getQueryParam('t');  
+const myParams = getQueryParam('ts');  
+console.log(myParam); // 输出 'myParam' 对应的值
+console.log(myParams); // 输出 'myParam' 对应的值
+
+// // 开始时间  
+// const simplifiedDateString = "2023-10-27 12:00:00";
+// // 开始时间戳
+// const secondsTimestamp = simplifiedDateToSecondsTimestamp(simplifiedDateString);
+// console.log(simplifiedDateString); 	// 输出秒级时间戳
 
 
-// 使用示例：从当前时间戳开始，到1小时后的时间戳结束，每10秒发送一个请求  
-const startTimestamp = secondsTimestamp;
-const endTimestamp = startTimestamp + 3600 * 6; // 1小时后  
-const intervalInSeconds = 10; // 每10秒  
+// // 使用示例：从当前时间戳开始，到1小时后的时间戳结束，每10秒发送一个请求  
+// const startTimestamp = secondsTimestamp;
+// const endTimestamp = startTimestamp + 3600 * 6; // 1小时后  
+// const intervalInSeconds = 10; // 每10秒  
 
 // traverseTimestamps(startTimestamp, endTimestamp, intervalInSeconds);
 
