@@ -1,0 +1,4 @@
+# 获取脚本的绝对路径
+ABS_SCRIPT_PATH=$(dirname $(realpath "$0"))
+
+alias gacp="$ABS_SCRIPT_PATH/gacp.sh"

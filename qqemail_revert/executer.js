@@ -1,29 +1,30 @@
-console.log(window);
-console.log(window.location.search);
+// console.log(window);
+// console.log(window.location.search);
 
-function getQueryParam(name) {  
-    const urlParams = new URLSearchParams(window.location.search);  
-    return urlParams.get(name);  
-}
+// function getQueryParam(name) {  
+//     const urlParams = new URLSearchParams(window.location.search);  
+//     return urlParams.get(name);  
+// }
 
-const myParam = getQueryParam('t');  
-const myParams = getQueryParam('ts');  
-console.log(myParam); // 输出 'myParam' 对应的值
-console.log(myParams); // 输出 'myParam' 对应的值
+// const myParam = getQueryParam('t');  
+// const myParams = getQueryParam('ts');  
+// console.log(myParam); // 输出 'myParam' 对应的值
+// console.log(myParams); // 输出 'myParam' 对应的值
 
-// // 开始时间  
-// const simplifiedDateString = "2023-10-27 12:00:00";
-// // 开始时间戳
-// const secondsTimestamp = simplifiedDateToSecondsTimestamp(simplifiedDateString);
-// console.log(simplifiedDateString); 	// 输出秒级时间戳
+// 开始时间  
+const simplifiedDateString = "2023-10-27 12:00:00";
+const hourCnt = 6;
+// 开始时间戳
+const secondsTimestamp = simplifiedDateToSecondsTimestamp(simplifiedDateString);
+console.log(simplifiedDateString); 	// 输出秒级时间戳
 
 
-// // 使用示例：从当前时间戳开始，到1小时后的时间戳结束，每10秒发送一个请求  
-// const startTimestamp = secondsTimestamp;
-// const endTimestamp = startTimestamp + 3600 * 6; // 1小时后  
-// const intervalInSeconds = 10; // 每10秒  
+// 使用示例：从当前时间戳开始，到1小时后的时间戳结束，每10秒发送一个请求  
+const startTimestamp = secondsTimestamp;
+const endTimestamp = startTimestamp + 3600 * hourCnt;
+const intervalInSeconds = 10; // 每10秒  
 
-// traverseTimestamps(startTimestamp, endTimestamp, intervalInSeconds);
+traverseTimestamps(startTimestamp, endTimestamp, intervalInSeconds);
 
 function simplifiedDateToSecondsTimestamp(dateString) {
     // 根据简化的日期时间格式构建Date对象  
@@ -55,13 +56,13 @@ function sendAjaxForTimestamp(timestamp) {
 
 function traverseTimestamps(startTimestamp, endTimestamp, intervalInSeconds) {
     let currentTimestamp = startTimestamp;
-    const intervalInMilliseconds = intervalInSeconds * 1000;
+    const intervalInMilliseconds = intervalInSeconds;
 
     while (currentTimestamp <= endTimestamp) {
         sendAjaxForTimestamp(currentTimestamp);
         currentTimestamp += intervalInMilliseconds;
         console.log('Taking a break...');
-        sleep(1);
+        sleep(2);
     }
 }
 
